@@ -7,8 +7,8 @@ import cors from "cors";
 
 export const app = express();
 app.use(cors());
-app.use(express.json())  // Middleware para parsear el cuerpo de las peticiones a JSON
-app.use("/api", AnimalRouter)  // Montar el enrutador de animales en la ruta /api
+app.use(express.json())  
+app.use("/api", AnimalRouter)  
 
 
 try {

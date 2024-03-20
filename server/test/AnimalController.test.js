@@ -24,7 +24,7 @@ describe('Testing CRUD animals', () => {
 
     afterAll(async () => {
         await AnimalModel.destroy({ where: { "name": { [Op.startsWith]: 'test' } } });
-        //await AnimalModel.truncate(); // Elimina todas las instancias de animales de la base de datos
+        
         await connection_db.close();
     });
 
