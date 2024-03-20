@@ -219,7 +219,7 @@ const AnimalForm = () => {
    animalData = {...formData, 'image': urlImg};
 
     try{ 
-      const response = await fetch('http://localhost:3000/animals', {
+      const response = await fetch('http://localhost:5000/api', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

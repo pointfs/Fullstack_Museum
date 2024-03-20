@@ -1,5 +1,5 @@
 export const getAnimal = async () => {
-    const response = await fetch('http://localhost:3000/animals');
+    const response = await fetch('http://localhost:5000/api');
     if (!response.ok) {
       throw new Error('Error al obtener los datos');
     }
@@ -10,7 +10,7 @@ export const getAnimal = async () => {
 
 export const getOneAnimal = async (id) =>{
   try{
-    const response = await fetch(`http://localhost:3000/animals/${id}`);
+    const response = await fetch(`http://localhost:5000/api/${id}`);
     const data = await response.json()
     return data
   } catch(error){
@@ -20,7 +20,7 @@ export const getOneAnimal = async (id) =>{
 
 export const updateAnimal = async (id, newData) =>{
   try { 
-  const response = await fetch(`http://localhost:3000/animals/${id}`, {
+  const response = await fetch(`http://localhost:5000/api/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ export const updateAnimal = async (id, newData) =>{
 };
   
 export const deleteAnimal = async (id) => {
-  await fetch(`http://localhost:3000/animals/${id}`, {method:"DELETE"}
+  await fetch(`http://localhost:5000/api/${id}`, {method:"DELETE"}
   ).then(response => {
       if (response.ok) {
         const confirmDelete = window.confirm("¿Estás seguro que deseas borrar la foto?"); 
